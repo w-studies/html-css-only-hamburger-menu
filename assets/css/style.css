@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+/* estiliza o layout */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  border: thin solid #eee
+}
+
+main {
+  flex: 1;
+  background-color: #eee;
+  padding: 6px;
+}
+
+.app > header,
+.app > footer {
+  display: flex;
+  align-items: center;
+}
+
+.app > header {
+  height: 55px;
+  border-bottom: thin solid #ccc;
+}
+
+.app > footer {
+  border-top: thin solid #ccc;
+  height: 40px;
+  justify-content: center;
+}
+
+.app > header > nav {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 55px;
+  width: 160px;
+  transition: all .2s ease;
+  transform: translateX(-170px);
+}
+
+.app > header > nav a:not(:first-child) {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  text-decoration: none;
+  border-bottom: thin solid #ccc;
+  background-color: #fafafa;
+  border-radius: 6px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .15);
+  transition: all .2s ease;
+}
+
+.app > header > nav a:not(:first-child):hover {
+  background-color: #fff;
+  font-weight: bold;
+}
+
+.app > header > nav a:not(:first-child)::before {
+  content: '»';
+  padding: 6px;
+}
+
+.app > header > nav a:first-child {
+  position: absolute;
+  top: -55px;
+}
+
+/* hamburger menu */
+.hamburger, .hamburger-close {
+  width: 41px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.hamburger .layers,
+.hamburger .layers:before,
+.hamburger .layers:after {
+  border-radius: 12px;
+  height: 2px;
+  background-color: #222;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.hamburger .layers {
+  position: relative;
+}
+
+.hamburger .layers:before,
+.hamburger .layers:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  transform: translateY(6px);
+}
+
+.hamburger .layers:after {
+  transform: translateY(-6px);
+}
+
+.hamburger:focus {
+  padding: 12px;
+}
+
+.hamburger:focus .layers {
+  background-color: transparent;
+}
+
+.hamburger:focus .layers:after {
+  transform: rotateZ(45deg);
+}
+
+.hamburger:focus .layers:before {
+  transform: rotateZ(-45deg);
+}
+
+.hamburger:focus + nav {
+  transform: translateX(0);
+}
+
+/* MAIN HEADER */
+main > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+/* table */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color: #779977;
+  color: #fafafa
+}
+
+th, td {
+  border: thin solid #ccc;
+  padding: 6px;
+}
+
+tbody tr:nth-child(odd) td {
+  background-color: #fafafa;
+}
+
+/* classes de texto */
+.text-danger {
+  color: red;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: right;
+}
+
+.fw-light {
+  font-weight: lighter;
+}
+
+small {
+  font-size: .7rem;
+}
